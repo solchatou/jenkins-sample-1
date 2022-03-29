@@ -16,6 +16,8 @@ node () {
  				bat "mvn clean package " 
 			} 
  		} 
-	}
+	}	
+	stage('Quality check') {  withSonarQubeEnv('Sonar') {    bat "mvn sonar:sonar"   }}
+
 }
 }
